@@ -1,0 +1,199 @@
+# Example config — business-Thai immersion learner
+# This reproduces the learn-thai project's current behavior.
+
+target_language: thai
+translation_target: en
+ui_language: zh
+
+whisper:
+  model_path: models/ggml-large-v3.bin
+  gap_threshold_sec: 1.5
+  max_duration_sec: 15.0
+  initial_prompt: >-
+    ราวิภา Ravipa Disney Infinity Collection Collab Mickey Stitch Zootopia
+    แบรนด์ ดีไซน์ ดีไซเนอร์ สาขา ต่างประเทศ โกลบอล global Brand Design
+    บุกเบิก กรุยทาง OEM SME ท้าวความ ฮ่องกง Macau Japan Shinjuku
+    ลูกค้า End user Intellectual Property IP Value
+    Style Guide Manual Book Adapt think beyond make it different
+    Selling Point Positioning Exclusive Lifestyle Quality Innovation
+
+vocab:
+  min_freq: 2
+  max_freq: 30
+  stopwords:
+    # particles / conjunctions / prepositions
+    - ที่
+    - ว่า
+    - ไม่
+    - มัน
+    - คือ
+    - เรา
+    - ก็
+    - ครับ
+    - เป็น
+    - ใน
+    - มี
+    - ได้
+    - แล้ว
+    - ไป
+    - เลย
+    - เขา
+    - แต่
+    - ของ
+    - การ
+    - กับ
+    - ต้อง
+    - ใช่
+    - จะ
+    - มาก
+    - นี้
+    - และ
+    - อะไร
+    - แบบ
+    - ให้
+    - อยู่
+    - มา
+    - นะ
+    - กว่า
+    - แล้วก็
+    - ค่ะ
+    - คน
+    - อย่าง
+    - แต่ว่า
+    - ทำ
+    - พวก
+    - ขึ้น
+    - โดย
+    - เพื่อ
+    - เพราะ
+    - ถ้า
+    - หรือ
+    - ออก
+    - เอา
+    - ก่อน
+    - ก็คือ
+    - ด้วย
+    - จาก
+    - ซึ่ง
+    - แบบนี้
+    - นั้น
+    - ถึง
+    - บาง
+    - อีก
+    - ทุก
+    - เอง
+    - นั่น
+    - อยาก
+    - ต้องการ
+    - ทำให้
+    - สิ่ง
+    - สิ่งที่
+    - เรื่อง
+    - บอก
+    - พูด
+    - เห็น
+    - รู้
+    - คิด
+    - ยัง
+    - หลาย
+    - เดียว
+    - แค่
+    - ส่วน
+    - เวลา
+    - ตอน
+    - วัน
+    - ปี
+    - ก็ได้
+    - ทั้ง
+    - หมด
+    - ต่อ
+    - ตาม
+    - อะ
+    - นะคะ
+    - นะครับ
+    - เพราะว่า
+    - เพราะฉะนั้น
+    - ดังนั้น
+    - แน่นอน
+    - ไทย
+    # high-frequency basic words
+    - อย่า
+    - ความ
+    - จริง
+    - กัน
+    - ตัว
+    - เรียน
+    - ยาก
+    - มือ
+    - สาว
+    - ต่าง
+    - คุณ
+    - เหมือน
+    - งาน
+    - หนึ่ง
+    - เข้า
+    - ฉัน
+    - สุด
+    - อันนี้
+    - นี่
+    - ทาง
+    - สาม
+    - ตัวเอง
+    - วันนี้
+    - โลก
+    - อาจ
+    - ไหม
+    - ใส่
+    - สามารถ
+    - แรก
+    - จุด
+    - เกิด
+    - ภาพ
+    - เปลี่ยน
+    - เมื่อ
+    - เยอะ
+    - ลูก
+    - อาจจะ
+    - ทุกคน
+    # pronouns
+    - ผม
+    - เธอ
+    - พวกเขา
+    # very short / common
+    - ยิ่ง
+    - สูง
+    - ต่ำ
+    - ดี
+    - ใหม่
+    - ใหญ่
+    - เล็ก
+    - เร็ว
+    - ช้า
+
+transcription:
+  fillers:
+    - ค่ะ
+    - ครับ
+    - คะ
+    - ครับๆ
+    - ค่ะๆ
+    - ใช่
+    - ใช่ค่ะ
+    - ใช่ครับ
+    - อ๋อ
+    - อ้า
+    - เออ
+    - อืม
+    - เอ่อ
+    - โอเค
+    - ok
+    - OK
+    - นะ
+    - นะคะ
+    - นะครับ
+    - หรอ
+    - หรอครับ
+    - หรอคะ
+    - ใช่ไหม
+    - ใช่ไหมครับ
+    - ใช่ไหมคะ

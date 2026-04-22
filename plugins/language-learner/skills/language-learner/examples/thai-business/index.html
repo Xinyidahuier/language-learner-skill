@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="darkreader-lock">
+<title>Learn Thai — 商业泰语</title>
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="header-logo">
+    <img src="logo.svg" alt="logo" class="site-logo">
+    <h1>Learn Thai</h1>
+    <p class="sub">商业泰语 · 听说优先</p>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <a class="review-banner" href="review.html">
+      <div class="review-banner-main">
+        <div class="review-num" id="dueCount">—</div>
+        <div class="review-label">今日待复习</div>
+      </div>
+      <div class="review-arrow">→</div>
+    </a>
+    <div class="mini-stats">
+      <span><b id="newCount">—</b> 新卡片</span>
+      <span class="sep">·</span>
+      <a href="review.html?all=1" class="stat-link"><b id="totalCount">—</b> 总卡片</a>
+      <span class="sep">·</span>
+      <span><b id="streak">—</b> 连续</span>
+    </div>
+  </section>
+
+  <section id="favoritesSection" hidden>
+    <h2>⭐ 收藏</h2>
+    <div id="favoritesList" class="video-list"></div>
+  </section>
+
+  <section>
+    <h2>📖 正在学</h2>
+    <div id="studyingList" class="video-list"><p class="muted">加载中…</p></div>
+  </section>
+
+  <section id="finishedSection" hidden>
+    <h2>✓ 已学完</h2>
+    <div id="finishedList" class="video-list"></div>
+  </section>
+
+  <section>
+    <h2>添加文章</h2>
+    <p class="muted">发给 Claude 一段 YouTube 链接 / 音频文件路径 / 泰语文本，Claude 会处理好后刷新这里就能看到。</p>
+  </section>
+
+  <section class="data-section">
+    <details>
+      <summary class="muted">数据管理</summary>
+      <div class="btn-row" style="margin-top:12px">
+        <button id="exportBtn" class="btn">导出进度</button>
+        <button id="importBtn" class="btn">导入进度</button>
+        <input type="file" id="importFile" accept=".json" hidden>
+        <button id="resetBtn" class="btn btn-danger">重置进度</button>
+      </div>
+    </details>
+  </section>
+</main>
+
+<script src="app.js"></script>
+<script src="home.js"></script>
+</body>
+</html>

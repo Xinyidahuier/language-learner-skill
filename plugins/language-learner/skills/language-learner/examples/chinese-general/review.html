@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="darkreader-lock">
+<title>复习 · Learn Chinese</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="review-body">
+<header>
+  <a href="index.html" class="back">← 返回</a>
+  <div class="progress-info">
+    <span id="progressText">0 / 0</span>
+    <span class="sep">·</span>
+    <span id="modeLabel">听力优先</span>
+  </div>
+  <button id="modeToggle" class="btn-sm">切换模式</button>
+</header>
+
+<main class="review-main">
+  <div id="cardArea" class="card-area">
+    <div class="card" id="card">
+      <div class="card-front" id="cardFront">
+        <div class="audio-big" id="audioBig">
+          <button id="playBtn" class="play-big">▶</button>
+          <audio id="audio" preload="auto"></audio>
+        </div>
+        <p class="card-hint" id="frontHint">听音频，尝试理解</p>
+        <button id="showAnswer" class="btn btn-primary btn-wide">显示答案</button>
+      </div>
+
+      <div class="card-back" id="cardBack" hidden>
+        <div class="audio-small">
+          <button id="playBtn2" class="play-small">▶ 再听一次</button>
+        </div>
+        <div class="thai-text" id="thaiText"></div>
+        <div class="romanization" id="romanText"></div>
+        <div class="translation" id="transText"></div>
+        <div class="vocab-block" id="vocabBlock"></div>
+        <div class="rate-buttons">
+          <button class="rate rate-again" data-q="1">重来<br><small id="intAgain">&lt;1min</small></button>
+          <button class="rate rate-hard" data-q="3">难<br><small id="intHard">1d</small></button>
+          <button class="rate rate-good" data-q="4">会<br><small id="intGood">3d</small></button>
+          <button class="rate rate-easy" data-q="5">简单<br><small id="intEasy">7d</small></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="doneArea" class="done-area" hidden>
+    <h2>今天做完啦 🎉</h2>
+    <p id="doneStats"></p>
+    <a href="index.html" class="btn btn-primary">返回首页</a>
+  </div>
+
+  <div id="emptyArea" class="done-area" hidden>
+    <h2>还没有卡片</h2>
+    <p class="muted">先处理一个视频，生成卡片后再回来复习。</p>
+    <a href="index.html" class="btn">返回首页</a>
+  </div>
+</main>
+
+<script src="app.js"></script>
+<script src="review.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "language-learner-skill",
+  "description": "Turn YouTube videos, audio files, or articles into a personal immersion-learning site with Whisper transcription, frequency-mined vocab, and SM-2 flashcards.",
+  "owner": {
+    "name": "Xinyidahuier",
+    "url": "https://github.com/Xinyidahuier"
+  },
+  "plugins": [
+    {
+      "name": "language-learner",
+      "description": "Scaffold a self-hosted language-learning site from user-chosen content (YouTube / audio / text). Supports Thai, Chinese, Japanese end-to-end; Korean planned; generic regex fallback for whitespace-separated languages.",
+      "source": "./plugins/language-learner",
+      "category": "education",
+      "tags": ["language-learning", "srs", "whisper", "immersion", "flashcards", "self-study"]
+    }
+  ]
+}

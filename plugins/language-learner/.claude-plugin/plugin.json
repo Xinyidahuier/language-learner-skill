@@ -1,0 +1,13 @@
+{
+  "name": "language-learner",
+  "version": "0.1.0",
+  "description": "Scaffold a personal language-learning site that turns YouTube videos, audio files, or articles into SRS flashcards with synced sentence audio, vocab highlighting, and spaced review.",
+  "author": {
+    "name": "Xinyidahuier",
+    "url": "https://github.com/Xinyidahuier"
+  },
+  "homepage": "https://github.com/Xinyidahuier/language-learner-skill",
+  "repository": "https://github.com/Xinyidahuier/language-learner-skill",
+  "license": "MIT",
+  "keywords": ["language-learning", "srs", "whisper", "immersion", "flashcards", "thai", "japanese", "chinese"]
+}

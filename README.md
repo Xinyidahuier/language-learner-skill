@@ -31,13 +31,26 @@ The theory of change: the vocab you see three times tonight in a video you wante
 
 ## Installation
 
-Clone the repo into your Claude Code skills directory:
+### Via Plugin Marketplace (Recommended)
+
+Install directly from Claude Code in two commands:
+
+```
+/plugin marketplace add Xinyidahuier/language-learner-skill
+/plugin install language-learner@language-learner-skill
+```
+
+### Manual Installation
+
+Or clone the repo into your Claude Code skills directory:
 
 ```bash
 git clone https://github.com/Xinyidahuier/language-learner-skill ~/.claude/skills/language-learner
 ```
 
-Then in Claude Code:
+### Triggering the skill
+
+In Claude Code:
 
 ```
 /language-learner
