@@ -18,10 +18,14 @@
 - [ ] Load i18n dict at app startup, render via `i18n(key)` helper
 - [ ] Add `ui_language` to `config.yaml`
 
-## Phase 4: Templatize
-- [ ] Turn HTML/JS files into templates with `{{PLACEHOLDERS}}`
-- [ ] Copy learn-thai code into `examples/thai-business/` as a working reference
-- [ ] SKILL.md handler: copy templates + substitute placeholders
+## Phase 4: Templatize / generalize pipeline ✅ (core)
+- [x] Copy learn-thai HTML/CSS/JS into `examples/thai-business/` (with empty data arrays, no audio)
+- [x] `pipeline/add_article.py` — generic pipeline driven by config + tokenizer factory
+  - text/audio/youtube input, Whisper lang code from config, translation batching, vocab mining with configurable freq caps, annotation
+  - uses unified `text` field (pipeline-agnostic of target language)
+- [x] End-to-end smoke test on Thai config — pipeline produced correct sentences + translations
+- [ ] Update `examples/thai-business/` JS to read `s.text` (deferred — part of Phase 3 i18n)
+- [ ] SKILL.md scaffold handler: "clone example + swap config" (Phase 6)
 
 ## Phase 5: Validate on a second language
 - [ ] Run the skill for Japanese on a sample article

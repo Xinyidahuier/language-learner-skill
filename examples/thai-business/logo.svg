@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7ed321"/>
+      <stop offset="100%" stop-color="#58cc02"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="32%" cy="22%" r="65%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="letter" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3fa900"/>
+      <stop offset="100%" stop-color="#2d7a00"/>
+    </linearGradient>
+    <clipPath id="tileClip">
+      <rect x="0" y="0" width="100" height="100" rx="22"/>
+    </clipPath>
+  </defs>
+
+  <!-- Tile background -->
+  <g clip-path="url(#tileClip)">
+    <rect x="0" y="0" width="100" height="100" fill="url(#bg)"/>
+    <rect x="0" y="0" width="100" height="100" fill="url(#shine)"/>
+
+    <!-- Thai flag banner down the left edge (red/white/blue 1:1:2:1:1) -->
+    <g>
+      <rect x="0" y="0"      width="18" height="16.67" fill="#ed1d24"/>
+      <rect x="0" y="16.67"  width="18" height="16.66" fill="#ffffff"/>
+      <rect x="0" y="33.33"  width="18" height="33.34" fill="#241d4f"/>
+      <rect x="0" y="66.67"  width="18" height="16.66" fill="#ffffff"/>
+      <rect x="0" y="83.33"  width="18" height="16.67" fill="#ed1d24"/>
+      <!-- Soft shadow dividing flag from tile -->
+      <rect x="18" y="0" width="1.5" height="100" fill="#000" opacity="0.12"/>
+    </g>
+  </g>
+
+  <!-- Chat bubble -->
+  <path d="
+    M 26 30
+    Q 26 22 34 22
+    L 82 22
+    Q 90 22 90 30
+    L 90 60
+    Q 90 68 82 68
+    L 46 68
+    L 34 78
+    Q 32 79.5 32.5 76
+    L 34 68
+    Q 26 68 26 60 Z
+  " fill="white"/>
+
+  <!-- Thai letter ก inside bubble -->
+  <text x="58" y="58"
+        text-anchor="middle"
+        font-family="'Noto Sans Thai','Sukhumvit Set','Thonburi','Leelawadee UI',system-ui,sans-serif"
+        font-size="40"
+        font-weight="900"
+        fill="url(#letter)">ก</text>
+</svg>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="darkreader-lock">
+<title>阅读器 · Learn Thai</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="reader.css">
+</head>
+<body class="reader-body">
+<header class="reader-header">
+  <a href="index.html" class="back">← 返回</a>
+  <div class="reader-title" id="videoTitle">加载中…</div>
+  <div class="reader-actions">
+    <button id="favBtn" class="btn-sm" title="收藏文章">☆</button>
+    <button id="statusBtn" class="btn-sm" title="标记学完">○</button>
+    <button id="toggleRom" class="btn-sm" title="显示/隐藏罗马音">Aa</button>
+    <button id="toggleTrans" class="btn-sm" title="显示/隐藏翻译">中</button>
+  </div>
+</header>
+
+<main class="reader-main">
+  <div class="reader-legend">
+    <span class="legend-item"><span class="legend-dot dot-highlight"></span>重点句</span>
+    <span class="legend-item"><span class="legend-dot dot-vocab"></span>商业词汇</span>
+    <span class="legend-item"><span class="legend-dot dot-saved"></span>已加复习</span>
+  </div>
+
+  <div id="transcript" class="transcript"></div>
+</main>
+
+<!-- Vocab popup -->
+<div id="vocabPopup" class="popup" hidden>
+  <div class="popup-head">
+    <div class="popup-thai" id="popupThai"></div>
+    <button class="popup-close" id="popupClose">×</button>
+  </div>
+  <div class="popup-rom" id="popupRom"></div>
+  <div class="popup-trans" id="popupTrans"></div>
+  <div class="popup-meta" id="popupMeta"></div>
+  <div class="popup-actions">
+    <button id="addToReview" class="btn btn-primary btn-sm">★ 加入复习</button>
+  </div>
+</div>
+
+<!-- Floating mini audio player -->
+<audio id="audio" preload="none"></audio>
+
+<script src="app.js"></script>
+<script src="reader.js"></script>
+</body>
+</html>

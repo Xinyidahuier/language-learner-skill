@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="darkreader-lock">
+<title>词汇库 · Learn Thai</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a href="index.html" class="back">← 返回</a>
+  <h1>词汇库</h1>
+</header>
+
+<main>
+  <div class="filter-bar">
+    <input type="search" id="searchInput" placeholder="搜索泰语 / 中文 / 拼音…" class="search">
+    <select id="tagFilter" class="select">
+      <option value="">全部标签</option>
+    </select>
+    <select id="sortBy" class="select">
+      <option value="freq">出现频次</option>
+      <option value="recent">最近学</option>
+      <option value="alpha">字母序</option>
+    </select>
+  </div>
+
+  <div class="vocab-count muted" id="vocabCount">—</div>
+
+  <div id="vocabList" class="vocab-list"></div>
+</main>
+
+<script src="app.js"></script>
+<script src="vocab.js"></script>
+</body>
+</html>
