@@ -11,7 +11,7 @@ Paste a YouTube URL, audio file, or article → get back an interactive page wit
 ## Install
 
 ```bash
-git clone https://github.com/<you>/language-learner-skill ~/.claude/skills/language-learner
+git clone https://github.com/Xinyidahuier/language-learner-skill ~/.claude/skills/language-learner
 ```
 
 Then in Claude Code:
@@ -26,11 +26,11 @@ Claude will ask about your target language and scaffold the project into the cur
 
 | Language | Tokenizer | Status |
 |---|---|---|
-| Thai | pythainlp | ✅ reference example |
-| Japanese | janome | planned |
-| Chinese | jieba | planned |
-| Korean | konlpy | planned |
-| Any other | regex fallback | ✅ basic |
+| Thai | pythainlp | ✅ reference example ([`examples/thai-business/`](examples/thai-business/)) |
+| Chinese | jieba | ✅ validated end-to-end ([`examples/chinese-general/`](examples/chinese-general/)) |
+| Japanese | janome | ✅ adapter ready, needs a reference example |
+| Korean | — | planned (would use konlpy or mecab-ko) |
+| Any other | regex fallback | ✅ basic (whitespace-separated languages) |
 
 ## Example projects built with this skill
 
