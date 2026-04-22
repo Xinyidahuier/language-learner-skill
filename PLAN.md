@@ -1,18 +1,17 @@
 # Refactor Plan — from learn-thai to shareable skill
 
-## Phase 1: Abstract tokenizer (language-agnostic pipeline)
-- [ ] Create `pipeline/tokenizers/base.py` — `Tokenizer` protocol with `tokenize(text) -> list[str]`
-- [ ] Implement `thai.py` wrapping pythainlp
-- [ ] Implement `japanese.py` wrapping janome
-- [ ] Implement `chinese.py` wrapping jieba
-- [ ] Implement `generic.py` — regex word-boundary fallback for European languages
-- [ ] Update `add_article.py` to import tokenizer by language code
+## Phase 1: Abstract tokenizer (language-agnostic pipeline) ✅
+- [x] Create `pipeline/tokenizers/base.py` — `Tokenizer` abstract class with `tokenize`/`extract_candidates`/`vocab_id`
+- [x] Implement `thai.py` wrapping pythainlp newmm
+- [x] Implement `japanese.py` wrapping janome (content-POS filter)
+- [x] Implement `chinese.py` wrapping jieba
+- [x] Implement `generic.py` — regex word-boundary fallback for European languages
+- [ ] Update `add_article.py` to import tokenizer by language code (Phase 2/4)
 
-## Phase 2: Config-driven pipeline
-- [ ] Extract `WHISPER_PROMPT` → `config.yaml` `whisper_prompt`
-- [ ] Extract `STOPWORDS` → `config.yaml` per language
-- [ ] Extract `min_freq` / `max_freq` → `config.yaml`
-- [ ] Extract translation target language → `config.yaml` `translation_target`
+## Phase 2: Config-driven pipeline ✅
+- [x] `pipeline/config.py` — dataclass schema + yaml loader
+- [x] `examples/thai-business/config.yaml` — reproduces learn-thai's current setup (144 stopwords, 25 fillers, whisper prompt, freq 2-30)
+- [x] Smoke-tested: `load_config` → tokenizer factory → extract_candidates, all pass
 
 ## Phase 3: UI i18n
 - [ ] Extract Chinese UI strings from HTML/JS into `i18n/zh.json` + `i18n/en.json`
