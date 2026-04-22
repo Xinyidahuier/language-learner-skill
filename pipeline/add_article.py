@@ -54,15 +54,31 @@ class Ctx:
         self.text_key = "text"  # field name on sentence/vocab objects
         self.fillers = set(cfg.transcription.fillers)
         self.lang_iso = _iso_code(cfg.target_language)
+        self.translator_source = _translator_code(cfg.target_language)
+        self.translator_target = _translator_code(cfg.translation_target)
 
 
 def _iso_code(name: str) -> str:
+    """Short code used by Whisper."""
     key = (name or "").lower()
     return {
         "thai": "th", "th": "th",
         "japanese": "ja", "ja": "ja", "jp": "ja",
-        "chinese": "zh", "zh": "zh",
+        "chinese": "zh", "zh": "zh", "zh-cn": "zh", "zh-tw": "zh",
         "korean": "ko", "ko": "ko",
+    }.get(key, key)
+
+
+def _translator_code(name: str) -> str:
+    """Code accepted by deep-translator's GoogleTranslator (e.g. zh-CN, not zh)."""
+    key = (name or "").lower()
+    return {
+        "thai": "th", "th": "th",
+        "japanese": "ja", "ja": "ja", "jp": "ja",
+        "chinese": "zh-CN", "zh": "zh-CN", "zh-cn": "zh-CN",
+        "zh-tw": "zh-TW", "traditional-chinese": "zh-TW",
+        "korean": "ko", "ko": "ko",
+        "english": "en", "en": "en",
     }.get(key, key)
 
 
@@ -321,7 +337,7 @@ def _batch_translate(ctx: Ctx, items: list[str]) -> dict[str, str]:
     except ImportError:
         print("  ↳ deep-translator not installed; skipping translation")
         return {}
-    tr = GoogleTranslator(source=ctx.lang_iso, target=ctx.cfg.translation_target)
+    tr = GoogleTranslator(source=ctx.translator_source, target=ctx.translator_target)
     out: dict[str, str] = {}
     print(f"  ↳ translating {len(items)} items…")
     batch = 20
@@ -506,7 +522,7 @@ def _batch_sentences(ctx: Ctx, texts: list[str]) -> dict[str, str]:
     except ImportError:
         print("  ↳ deep-translator not installed; sentences untranslated")
         return {}
-    tr = GoogleTranslator(source=ctx.lang_iso, target=ctx.cfg.translation_target)
+    tr = GoogleTranslator(source=ctx.translator_source, target=ctx.translator_target)
     out: dict[str, str] = {}
     print(f"  ↳ translating {len(texts)} sentences…")
     for t in texts:

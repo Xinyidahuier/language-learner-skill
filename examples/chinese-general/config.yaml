@@ -1,0 +1,57 @@
+# Example config — Chinese learner (simplified)
+# Use for validation / as a starting point for Mandarin study.
+
+target_language: chinese
+translation_target: en
+ui_language: en
+
+whisper:
+  model_path: models/ggml-large-v3.bin
+  gap_threshold_sec: 1.5
+  max_duration_sec: 15.0
+  initial_prompt: ""
+
+vocab:
+  min_freq: 1
+  max_freq: 30
+  stopwords:
+    - 的
+    - 了
+    - 在
+    - 是
+    - 我
+    - 有
+    - 和
+    - 就
+    - 不
+    - 人
+    - 都
+    - 一
+    - 一个
+    - 上
+    - 也
+    - 很
+    - 到
+    - 说
+    - 要
+    - 去
+    - 你
+    - 会
+    - 着
+    - 没有
+    - 看
+    - 好
+    - 自己
+    - 这
+    - 那
+    - 什么
+    - 可以
+    - 但是
+    - 因为
+    - 所以
+    - 如果
+    - 就是
+    - 已经
+
+transcription:
+  fillers: []
