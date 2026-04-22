@@ -28,7 +28,7 @@ Claude will ask about your target language and scaffold the project into the cur
 |---|---|---|
 | Thai | pythainlp | ✅ reference example ([`examples/thai-business/`](examples/thai-business/)) |
 | Chinese | jieba | ✅ validated end-to-end ([`examples/chinese-general/`](examples/chinese-general/)) |
-| Japanese | janome | ✅ adapter ready, needs a reference example |
+| Japanese | janome | ✅ validated end-to-end (POS filter + lemma normalization working) |
 | Korean | — | planned (would use konlpy or mecab-ko) |
 | Any other | regex fallback | ✅ basic (whitespace-separated languages) |
 
